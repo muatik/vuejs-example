@@ -1,11 +1,10 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div class="container-fluid">
+    hello form index
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
 }
 </script>
