@@ -15,7 +15,7 @@
         </ul>
 
         <product-price :product="product" class="product-price my-4"></product-price>
-        <!-- <add-to-cart :product="product"></add-to-cart> -->
+        <add-to-cart :product="product"></add-to-cart>
 
       </div>
     </div>
@@ -25,10 +25,11 @@
 <script>
 import ProductService from '../services/ProductService'
 import ProductPrice from './ProductPrice'
+import AddToCart from './CartButton'
 
 export default {
   name: 'ProductDetail',
-  components: {ProductPrice},
+  components: {ProductPrice, AddToCart},
   data () {
     return {
       product: null
