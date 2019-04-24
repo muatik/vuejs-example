@@ -38,3 +38,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+a.card {
+  text-decoration: none;
+}
+.product-title {
+  color: black;
+}
+.product-image {
+  border-bottom: 2px solid #f0f0f0;
+}
+</style>
