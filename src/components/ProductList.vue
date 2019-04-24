@@ -13,8 +13,7 @@
               <p class="product-title">
                 {{product.title}}
               </p>
-              <p>{{product.price}}</p>
-              <!-- <product-price :product="product"></product-price> -->
+              <product-price :product="product"></product-price>
             </div>
 
           </a>
@@ -26,8 +25,11 @@
 </template>
 
 <script>
+import ProductPrice from './ProductPrice'
+
 export default {
   name: 'ProductList',
+  components: {ProductPrice},
   data () {
     return {
       products: []
