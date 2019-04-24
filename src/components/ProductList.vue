@@ -4,8 +4,7 @@
       <div class="row">
 
         <div v-for="product in products" :key="product.id" class="col-sm-12 col-md-6 col-lg-3">
-          <!-- <router-link class="card mb-4 shadow-sm py-0" :to="getProductUrl(product)"> -->
-          <a class="card mb-4 shadow-sm py-0">
+          <router-link class="card mb-4 shadow-sm py-0" :to="getProductUrl(product)">
 
             <img class="product-image" :src="product.image" width="100%" height="200" />
 
@@ -16,7 +15,7 @@
               <product-price :product="product"></product-price>
             </div>
 
-          </a>
+          </router-link>
         </div>
 
       </div>
@@ -37,6 +36,13 @@ export default {
   },
   created () {
     this.products = this.$store.state.products.products
+  },
+  methods: {
+    getProductUrl (product) {
+      return {
+        'name': 'ProductDetail',
+        params: {'productId': product.id, 'productTitle': product.title.replace(' ', '-')}}
+    }
   }
 }
 </script>
