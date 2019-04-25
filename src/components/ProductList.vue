@@ -35,7 +35,7 @@ export default {
     }
   },
   created () {
-    this.products = this.$store.state.products.products
+    this.products = this.$store.state.productsStore.products
   },
   methods: {
     getProductUrl (product) {

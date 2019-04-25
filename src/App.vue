@@ -40,7 +40,7 @@
         </ul>
         <form class="form-inline my-2">
           <a class="btn btn-outline-primary mr-sm-2" href="#">Sign up</a>
-          <!-- <cart-button></cart-button> -->
+          <cart-button></cart-button>
         </form>
       </div>
     </nav>
@@ -50,7 +50,10 @@
 </template>
 
 <script>
+import CartButton from './components/CartButton'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {CartButton}
 }
 </script>

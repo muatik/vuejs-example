@@ -8,15 +8,14 @@
 <script>
 export default {
   name: 'CartButton',
-  data() {
+  data () {
     return {
       cartRoute: {'name': 'cart'}
     }
   },
   computed: {
-    counter() {
-      return 4
-      // return this.$store.state.cart.counter
+    counter () {
+      return this.$store.state.cartStore.counter
     }
   }
 }

@@ -25,7 +25,7 @@
 <script>
 import ProductService from '../services/ProductService'
 import ProductPrice from './ProductPrice'
-import AddToCart from './CartButton'
+import AddToCart from './AddToCart'
 
 export default {
   name: 'ProductDetail',
@@ -40,3 +40,19 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.product-header {
+  font-size: 130%;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.btn-add-cart {
+  background-color: #0315ff;
+  color: #fff;
+}
+.product-price {
+  font-size:130%
+}
+</style>

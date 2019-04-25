@@ -5,13 +5,15 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import ProductStore from './stores/ProductStore'
+import CartStore from './stores/CartStore'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    products: ProductStore
+    productsStore: ProductStore,
+    cartStore: CartStore
   }
 })
 
