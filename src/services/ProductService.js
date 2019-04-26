@@ -8,7 +8,8 @@ export default {
   },
   findById (productId) {
     // @TODO: fix it
-    return Object.values(products)[0]
+    return products[productId]
+    // return Object.values(products)[0]
   },
   save (product) {
     if (!('id' in product)) {
