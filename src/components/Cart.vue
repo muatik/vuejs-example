@@ -1,11 +1,12 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
+    <h2>Shopping Cart</h2>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Product</th>
           <th scope="col">Price</th>
-          <th scope="col">Quantity</th>
+          <th scope="col" class="text-right">Quantity</th>
         </tr>
       </thead>
       <tbody>
@@ -22,7 +23,7 @@
 
           </td>
           <td>{{orderLine.product.price}}</td>
-          <td>
+          <td class="text-right">
             <select v-model="orderLine.quantity">
               <option
                 v-for="i in 10" :key="i"
@@ -32,14 +33,28 @@
         </tr>
       </tbody>
     </table>
-
-    {{totalAmount}}
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="text-right total-price">
+          <p class="price">Total: {{totalAmount}}</p>
+          <span class="text-muted">VAT + Shipping cost included</span>
+        </div>
+        <router-link 
+          :to="checkoutUrl"
+          class="btn btn-checkout float-right">Proceed to checkout</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Cart',
+  data() {
+    return {
+      checkoutUrl: {'name': 'checkout'}
+    }
+  },
   computed: {
     totalAmount () {
       return this.$store.getters['cartStore/totalAmount']
@@ -55,3 +70,28 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media (max-width: 767px) {
+  .btn-checkout {
+    display: block;
+    width: 100%;
+  }
+}
+
+.btn-checkout {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.total-price {
+  border-top: 2px solid #eaeaea;
+  padding: 10px;
+  margin: 10px;
+}
+.total-price .price {
+    font-weight: bold;
+    color: #dc0345;
+    font-size: 1.2em;
+}
+</style>

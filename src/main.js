@@ -6,6 +6,8 @@ import App from './App'
 import router from './router'
 import ProductStore from './stores/ProductStore'
 import CartStore from './stores/CartStore'
+import ProductService from './services/ProductService'
+import OrderLine from './entities/OrderLine'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
@@ -50,6 +52,9 @@ store.dispatch('addProduct', {
   'price': 22.42,
   'image': 'https://img.ltwebstatic.com/images/pi/201708/e1/15015524241247082510_thumbnail_900x.jpg'
 })
+
+store.commit('cartStore/addOrderLine', new OrderLine(ProductService.findAll()[0], 1))
+store.commit('cartStore/addOrderLine', new OrderLine(ProductService.findAll()[1], 2))
 
 /* eslint-disable no-new */
 new Vue({
