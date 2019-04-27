@@ -22,7 +22,13 @@
 
           </td>
           <td>{{orderLine.product.price}}</td>
-          <td>{{orderLine.quantity}}</td>
+          <td>
+            <select v-model="orderLine.quantity">
+              <option
+                v-for="i in 10" :key="i"
+                :selected="i == orderLine.quantity">{{i}}</option>
+            </select>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -46,6 +52,6 @@ export default {
     removeFromCard (orderLine) {
       this.$store.commit('cartStore/removeOrderLine', orderLine)
     }
-  },
+  }
 }
 </script>

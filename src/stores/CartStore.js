@@ -4,8 +4,7 @@ export default {
   namespaced: true,
   state: {
     counter: 0,
-    orderLines: {},
-    _orderLinesIndex: {}
+    orderLines: {}
   },
   getters: {
     totalAmount (state) {
@@ -28,13 +27,15 @@ export default {
       }
     },
     removeOrderLine (state, orderLine) {
+      Vue.delete(state.orderLines, orderLine.product.id)
+    },
+    descreaseQuantity (state, orderLine) {
       const id = orderLine.product.id
-      const _orderLine = state.orderLines[id]
-      if (_orderLine.quantity === 1) {
+      if (orderLine.quantity === 1) {
         Vue.delete(state.orderLines, id, orderLine)
         state.counter--
       } else {
-        _orderLine.quantity--
+        orderLine.quantity--
       }
     }
   }
