@@ -4,24 +4,24 @@
     <div v-if="!isNewAddressFormActive">
       <h2>My addresses</h2>
       <div class="row">
-        <div 
+        <div
           v-for="(address, index) in addresses" :key="index"
           class="col-md-4" style="min-width: 18rem;">
           <div class="card my-4 shadow-sm">
             <div class="card-body col-block">
               <h5 class="card-title">{{address.name}}</h5>
               <p class="card-text">{{ getSummary(address) }}</p>
-              <button 
+              <button
                 v-show="customer.defaultAddress.name == address.name"
                 @click.prevent="setDefaultAddress(address)"
                 class="btn btn-sm btn-block btn-outline-secondary mb-2">
                   <i class="fas fa-check text-success"></i> deliver to this address</button>
-              <button 
+              <button
                 v-show="customer.defaultAddress.name !== address.name"
                 @click.prevent="setDefaultAddress(address)"
                 class="btn btn-sm btn-block btn-primary mb-2">deliver to this address</button>
 
-              <button 
+              <button
                 v-if="address.isInProgress === true"
                 class="btn btn-primary" type="button" disabled>
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -91,7 +91,6 @@ export default {
       // @TODO: disable whole address card
       this.$store.dispatch('customerStore/deleteAddress', address)
         .then(() => {
-
           console.log('deleted')
         })
     },
