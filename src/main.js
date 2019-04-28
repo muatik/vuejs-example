@@ -6,8 +6,11 @@ import App from './App'
 import router from './router'
 import ProductStore from './stores/ProductStore'
 import CartStore from './stores/CartStore'
+import CustomerStore from './stores/CustomerStore'
 import ProductService from './services/ProductService'
 import OrderLine from './entities/OrderLine'
+import Customer from './entities/Customer'
+import Address from './entities/Address'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
@@ -15,7 +18,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   modules: {
     productsStore: ProductStore,
-    cartStore: CartStore
+    cartStore: CartStore,
+    customerStore: CustomerStore
   }
 })
 
@@ -52,6 +56,15 @@ store.dispatch('addProduct', {
   'price': 22.42,
   'image': 'https://img.ltwebstatic.com/images/pi/201708/e1/15015524241247082510_thumbnail_900x.jpg'
 })
+
+const address = new Address('Home Berlin', 'Germany', 'Berlin', 'Berlin', 10111, 'Hertzstr. 12 Mitte', 'Mustafa Nothing', 'go straight and find it')
+const c = new Customer(
+  'my-c1',
+  'Mustafa',
+  'Atik', 'muatik@gmail.com', '555',
+  [address],
+  address)
+store.dispatch('customerStore/setCustomer', c)
 
 store.commit('cartStore/addOrderLine', new OrderLine(ProductService.findAll()[0], 1))
 store.commit('cartStore/addOrderLine', new OrderLine(ProductService.findAll()[1], 2))

@@ -39,7 +39,7 @@
           <p class="price">Total: {{totalAmount}}</p>
           <span class="text-muted">VAT + Shipping cost included</span>
         </div>
-        <router-link 
+        <router-link
           :to="checkoutUrl"
           class="btn btn-checkout float-right">Proceed to checkout</router-link>
       </div>
@@ -50,7 +50,7 @@
 <script>
 export default {
   name: 'Cart',
-  data() {
+  data () {
     return {
       checkoutUrl: {'name': 'checkout'}
     }

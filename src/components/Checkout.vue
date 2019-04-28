@@ -1,21 +1,33 @@
 <template>
-  <div class="container">
+  <div class="container my-4">
     <div class="row">
-      - address 
-      - read aggrements
-      - select delivery + invoice address
-      - payment option
+      <customer-registration
+        v-if="!isLoggined"
+        class="col-12 col-md-4 offset-md-4"></customer-registration>
+      <!-- <address-selection></address-selection> -->
+      <!-- <aggrement-acceptance></aggrement-acceptance> -->
+      <!-- <select-payment-method></select-payment-method> -->
     </div>
   </div>
 </template>
 
 <script>
+import AddressSelection from './Customeraddresses'
+import CustomerRegistration from './CustomerRegistration'
+
+
 export default {
   name: 'Chekcout',
-  data() {
+  components: {AddressSelection, CustomerRegistration},
+  data () {
     return {
-      
+
     }
   },
+  computed: {
+    isLoggined() {
+      return false
+    }
+  }
 }
 </script>

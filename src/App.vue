@@ -57,3 +57,6 @@ export default {
   components: {CartButton}
 }
 </script>
+<style>
+
+</style>

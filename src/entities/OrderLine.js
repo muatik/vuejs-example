@@ -1,7 +1,4 @@
 export default class OrderLine {
-  product
-  quantity
-
   constructor (product, quantity) {
     this.product = product
     this.quantity = quantity
