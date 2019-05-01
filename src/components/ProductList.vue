@@ -29,14 +29,7 @@ import ProductPrice from './ProductPrice'
 export default {
   name: 'ProductList',
   components: {ProductPrice},
-  data () {
-    return {
-      products: []
-    }
-  },
-  created () {
-    this.products = this.$store.state.productsStore.products
-  },
+  props: ['products'],
   methods: {
     getProductUrl (product) {
       return {

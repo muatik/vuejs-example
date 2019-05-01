@@ -6,7 +6,9 @@
         @customerSignedIn="customerSignedIn"
         class="col-12 col-md-4 offset-md-4"></customer-registration>
 
-      <div class="col-12 col-md-8 offset-md-2" v-if="customerSignedIn">
+      <div
+        v-if="customerSignedIn"
+        class="col-12 col-md-8 offset-md-2">
 
         <h2 class="col-12">Review your order</h2>
 
