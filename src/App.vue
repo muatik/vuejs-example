@@ -17,16 +17,16 @@
       <div class="collapse navbar-collapse mx-5 " id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <router-link to="/" class="nav-link">Home <span class="sr-only">(current)</span></router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sale</a>
+            <router-link to="sale" class="nav-link">Sales</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Bags</a>
+            <router-link to="bags" class="nav-link">Bags</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Clothes</a>
+            <router-link to="lethers" class="nav-link">Lethers</router-link>
           </li>
         </ul>
         <form class="form-inline my-2">
@@ -36,7 +36,7 @@
       </div>
     </nav>
 
-    <router-view />
+    <router-view class="page-content" />
 
     <div class="container-fluid footer">
       <footer class="pt-3 my-md-4 pt-md-4">
@@ -116,6 +116,9 @@ export default {
 <style scoped>
 nav {
   margin-bottom: 0 !important;
+}
+.page-content {
+  /* background-color: #f8f9fa!important */
 }
 .footer {
   background-color: #641971;

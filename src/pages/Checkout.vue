@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import CustomerRegistration from './CustomerRegistration'
+import CustomerRegistration from '@/components/CustomerRegistration'
 
 export default {
   name: 'Chekcout',

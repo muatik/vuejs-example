@@ -1,19 +1,17 @@
 <template>
-  <div>
-    <index-carousel
-      :slides="slides"></index-carousel>
+  <div class="container-fluid">
+    <h2 class="py-4 text-center border-bottom">Lether</h2>
     <product-list
       :products="products"></product-list>
   </div>
 </template>
 
 <script>
-import ProductList from './ProductList'
-import IndexCarousel from './IndexCarousel'
+import ProductList from '@/components/ProductList'
 
 export default {
-  name: 'Index',
-  components: {ProductList, IndexCarousel},
+  name: 'Lethers',
+  components: {ProductList},
   data() {
     return {
       products: []

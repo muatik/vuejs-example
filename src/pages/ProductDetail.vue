@@ -23,9 +23,9 @@
 </template>
 
 <script>
-import ProductService from '../services/ProductService'
-import ProductPrice from './ProductPrice'
-import AddToCart from './AddToCart'
+import ProductService from '@/services/ProductService'
+import ProductPrice from '@/components/ProductPrice'
+import AddToCart from '@/components/AddToCart'
 
 export default {
   name: 'ProductDetail',

@@ -57,8 +57,8 @@
 </template>
 
 <script>
-import AddressForm from './AddressForm'
 import Vue from 'vue'
+import AddressForm from '@/components/AddressForm'
 
 export default {
   name: 'CustomerAddresses',
