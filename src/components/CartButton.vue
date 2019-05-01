@@ -1,7 +1,7 @@
 <template>
   <router-link class="btn btn-outline-primary" :to="cartRoute">
     <i class="fas fa-shopping-cart"></i>
-    <span class="badge badge-primary">{{counter}}</span>
+    <span class="badge">{{counter}}</span>
   </router-link>
 </template>
 
@@ -20,3 +20,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.badge {
+  border: 1px solid white;
+}
+</style>

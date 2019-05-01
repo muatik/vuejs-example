@@ -20,13 +20,13 @@
             <router-link to="/" class="nav-link">Home <span class="sr-only">(current)</span></router-link>
           </li>
           <li class="nav-item">
-            <router-link to="sale" class="nav-link">Sales</router-link>
+            <router-link to="/sale" class="nav-link">Sales</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="bags" class="nav-link">Bags</router-link>
+            <router-link to="/bags" class="nav-link">Bags</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="lethers" class="nav-link">Lethers</router-link>
+            <router-link to="/lethers" class="nav-link">Lethers</router-link>
           </li>
         </ul>
         <form class="form-inline my-2">
@@ -114,6 +114,8 @@ export default {
 </script>
 
 <style scoped>
+@import './assets/styles/buttons.css';
+
 nav {
   margin-bottom: 0 !important;
 }
