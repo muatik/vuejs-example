@@ -8,7 +8,7 @@
         <router-link :to="{name: 'Practice'}" class="nav-link">Practice</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Stats</a>
+        <router-link :to="{name: 'Stats'}" class="nav-link">Stats</router-link>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
